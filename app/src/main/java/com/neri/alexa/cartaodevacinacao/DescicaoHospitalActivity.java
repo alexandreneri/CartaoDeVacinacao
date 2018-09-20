@@ -1,0 +1,13 @@
+
+package com.neri.alexa.cartaodevacinacao;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class DescicaoHospitalActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_descicao_hospital);
+    }
+}

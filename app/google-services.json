@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "663431431969",
+    "firebase_url": "https://cartaovacina-123.firebaseio.com",
+    "project_id": "cartaovacina-123",
+    "storage_bucket": "cartaovacina-123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663431431969:android:ee381699c43dc7f1",
+        "android_client_info": {
+          "package_name": "com.neri.alexa.cartaodevacinacao"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663431431969-6969qd9ce8b4cpggtnmk2d3lebsu8vel.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neri.alexa.cartaodevacinacao",
+            "certificate_hash": "39cded6a80d4e225595a9a1622e9df4a6bf46687"
+          }
+        },
+        {
+          "client_id": "663431431969-umn0timu80cqpqekaujvsah43mt5p7a5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt6TQs38dQGZXMVWJZahSMYVtN4SI30gw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663431431969-umn0timu80cqpqekaujvsah43mt5p7a5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
