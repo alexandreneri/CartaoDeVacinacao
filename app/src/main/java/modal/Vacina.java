@@ -3,26 +3,27 @@ package modal;
  * Created by alexa on 19/09/2017.
  */
 public class Vacina {
-    private int idade;
+    private String idade;
     private String vacina;
     private String doenca_protecao;
-    private int dose;
+    private String dose;
     private String dose_qtd;
     private String via_administracao;
 
-    public Vacina(int idade, String vacina, String doenca_protecao, int dose, String dose_qtd, String via_administracao) {
+
+    public Vacina(String idade, String vacina, String doenca_protecao, String dose, String dose_qtd, String via_administracao) {
         this.idade = idade;
         this.vacina = vacina;
-        this.doenca_protecao = doenca_protecao;
+        this.doenca_protecao=doenca_protecao;
         this.dose = dose;
         this.dose_qtd = dose_qtd;
-        this.via_administracao = via_administracao;
+        this.via_administracao =  via_administracao;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
     public String getVacina() {
@@ -37,10 +38,10 @@ public class Vacina {
     public void setDoenca_protecao(String doenca_protecao) {
         this.doenca_protecao = doenca_protecao;
     }
-    public int getDose() {
+    public String getDose() {
         return dose;
     }
-    public void setDose(int dose) {
+    public void setDose(String dose) {
         this.dose = dose;
     }
     public String getDose_qtd() {

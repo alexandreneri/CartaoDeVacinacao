@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.neri.alexa.cartaodevacinacao">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -26,12 +27,8 @@
         <activity android:name=".CartaoVacinaActivity" />
         <activity android:name=".Descricao_Vacina_Activity" />
         <activity android:name=".DescicaoHospitalActivity" />
-        <activity android:name=".login.CadastraUsuarioActivity"></activity>
-
-
-
-
-
+        <activity android:name=".login.CadastraUsuarioActivity" />
+        <activity android:name=".CartaoVacinaVacina"></activity>
     </application>
 
 </manifest>

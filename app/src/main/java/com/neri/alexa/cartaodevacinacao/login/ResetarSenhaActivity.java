@@ -1,4 +1,6 @@
 package com.neri.alexa.cartaodevacinacao.login;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +23,10 @@ public class ResetarSenhaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+     //   getActionBar().setTitle(ResetarSenhaActivity.class.getName());
         setContentView(R.layout.activity_resetar_senha);
+      //  getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F51B5")));
+
         inicializaComponentes();
         onClicks();
     }

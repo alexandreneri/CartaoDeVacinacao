@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,8 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText editEmail, editSenha;
     private Button btnCadastrar;
     private FirebaseAuth auth;
+    private ProgressBar progressBar;
+    private Boolean nbAtivo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +60,13 @@ public class CadastroActivity extends AppCompatActivity {
                         }
                     }
                 });
-
     }
 
     private void inicializaComponentes(){
         editEmail = (EditText) findViewById(R.id.editEmailCadastro);
         editSenha = (EditText) findViewById(R.id.editSenhaCadastro);
         btnCadastrar = (Button) findViewById(R.id.buttonCadastrar);
+        progressBar = (ProgressBar)findViewById(R.id.progressBarCadastrar);
 
     }
 
