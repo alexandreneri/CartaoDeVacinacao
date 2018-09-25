@@ -36,8 +36,7 @@ public class VacinasActivity extends AppCompatActivity {
 
 
         readJson();
-        lista.setAdapter(adapter);
-        lista.deferNotifyDataSetChanged();
+
 
 
 
@@ -116,14 +115,14 @@ public class VacinasActivity extends AppCompatActivity {
     private  void readJson() {
 
         Firebase.setAndroidContext(this);
-        objetoRef = new Firebase("https://cartaovacina-123.firebaseio.com/");
+        objetoRef = new Firebase("https://cartaovacina-123.firebaseio.com/vacinas");
         vacinatest = new ArrayList<Vacina>();
 
         lista = (ListView) findViewById(R.id.listviewVacina);
 
         adapter = new VacinaAdapter(this, vacinatest);
 
-
+        lista.setAdapter(adapter);
 
 
         objetoRef.addValueEventListener(new ValueEventListener() {
@@ -144,6 +143,7 @@ public class VacinasActivity extends AppCompatActivity {
 
                 }
 
+                lista.deferNotifyDataSetChanged();
 
             }
 
@@ -152,12 +152,6 @@ public class VacinasActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
 
     }
 
