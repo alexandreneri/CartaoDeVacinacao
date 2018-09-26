@@ -24,7 +24,7 @@
         <activity android:name=".TelaInicialActivity" />
         <activity android:name=".VacinasActivity" />
         <activity android:name=".HospitalActivity" />
-        <activity android:name=".ImcActivity" />
+        <activity android:name="imc.ImcActivity" />
         <activity android:name=".CartaoVacinaActivity" />
         <activity android:name=".Descricao_Vacina_Activity" />
         <activity android:name=".DescicaoHospitalActivity" />

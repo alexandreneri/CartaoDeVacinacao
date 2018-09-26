@@ -8,6 +8,8 @@ import android.widget.Button;
 import com.neri.alexa.cartaodevacinacao.login.ConexaoFirebase;
 import com.neri.alexa.cartaodevacinacao.login.MainActivity;
 
+import imc.ImcActivity;
+
 public class TelaInicialActivity extends AppCompatActivity {
 
     private Button btnSair, btnVacina, btnHospital, btnCartao, btnImc;
