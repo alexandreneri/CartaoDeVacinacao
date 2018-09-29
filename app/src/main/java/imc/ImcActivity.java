@@ -16,7 +16,6 @@ public class ImcActivity extends AppCompatActivity {
     TextView textViewResultado;
     Button btnNovoImc;
     Button btnTradicionalImc;
-
     ImcFachada imcFachada;
 
 
@@ -25,48 +24,33 @@ public class ImcActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imc);
         inicializacaoComponentes();
-        imcFachada = new ImcFachada();
-        imcFachada.inicializarComponentes();
-
         onClick();
-
     }
 
     private void onClick() {
-
         btnTradicionalImc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String resultado = String.valueOf( imcFachada.calcularImcNovo(pegaValoreseRetornaImc()));
-                textViewResultado.setText(resultado);
+                textViewResultado.setText("Imc Tradicional: "+ resultado);
             }
         });
-
 
         btnNovoImc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 String resultado = String.valueOf(imcFachada.calcularImcTradicional(pegaValoreseRetornaImc()));
-                textViewResultado.setText(resultado);
+                textViewResultado.setText("Imc Novo: "+resultado);
             }
         });
     }
 
     private Imc pegaValoreseRetornaImc(){
-
         double altura = Double.parseDouble(editTextAltura.getText().toString());
         double peso =  Double.parseDouble(editTextPeso.getText().toString());
-
         Imc imc = new Imc(altura,peso);
-
-
-
-
         return  imc;
     }
-
 
     private void inicializacaoComponentes(){
         editTextAltura = (EditText) findViewById(R.id.editTextAltura);
@@ -74,5 +58,7 @@ public class ImcActivity extends AppCompatActivity {
         textViewResultado = (TextView) findViewById(R.id.textViewResultado);
         btnNovoImc = (Button) findViewById(R.id.buttonNovoImc);
         btnTradicionalImc = (Button) findViewById(R.id.buttonTradicionalImc);
+        imcFachada = new ImcFachada();
+        imcFachada.inicializarComponentes();
     }
 }

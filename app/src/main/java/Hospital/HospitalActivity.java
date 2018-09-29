@@ -27,7 +27,6 @@ public class HospitalActivity extends AppCompatActivity {
     Firebase objetoRef;
     private  ListView lista;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

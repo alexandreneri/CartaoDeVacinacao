@@ -21,6 +21,10 @@ public class DescicaoHospitalActivity extends AppCompatActivity {
     private TextView tbairro;
     private TextView tFone;
     private TextView tEndereco;
+    private String unidade;
+    private String bairro;
+    private String endereco;
+    private String fone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,58 +32,30 @@ public class DescicaoHospitalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_descicao_hospital);
 
         inicializacaoComponentes();
+        getValuesIntent();
+        setTextView();
+    }
 
-        Intent intent = getIntent();
-
-        String unidade = (String) intent.getSerializableExtra("unidade");
-        String bairro = (String) intent.getSerializableExtra("bairro");
-        final String fone = (String) intent.getSerializableExtra("fone");
-        final String endereco = (String) intent.getSerializableExtra("endereco");
-
-
+    private void setTextView() {
         tUnidade.setText(unidade);
         tbairro.setText(bairro);
         tFone.setText(fone);
         tEndereco.setText(endereco);
-
-
-        tFone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse("tel:" + fone);
-                Intent intent = new Intent(Intent.ACTION_CALL, uri);
-
-                if (ActivityCompat.checkSelfPermission(DescicaoHospitalActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-
-                    return;
-                }
-                startActivity(intent);
-            }
-        });
-/*
-        tEndereco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse(endereco);
-                Intent intent = new Intent(Intent.Maps)
-            }
-        });
-
-*/
-
-
     }
+
 
     private  void inicializacaoComponentes(){
         tUnidade = (TextView) findViewById(R.id.textViewNomeHospital);
         tbairro = (TextView) findViewById(R.id.textViewBairro);
         tFone = (TextView) findViewById(R.id.textViewFone);
         tEndereco=(TextView) findViewById(R.id.textViewEndereco);
-
     }
 
-
-
-
-
+    public void getValuesIntent() {
+        Intent intent = getIntent();
+        unidade = (String) intent.getSerializableExtra("unidade");
+        bairro = (String) intent.getSerializableExtra("bairro");
+        fone = (String) intent.getSerializableExtra("fone");
+        endereco = (String) intent.getSerializableExtra("endereco");
+    }
 }
