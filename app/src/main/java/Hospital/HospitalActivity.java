@@ -1,4 +1,4 @@
-package com.neri.alexa.cartaodevacinacao;
+package Hospital;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.neri.alexa.cartaodevacinacao.R;
 
 import java.util.ArrayList;
 
@@ -26,13 +27,18 @@ public class HospitalActivity extends AppCompatActivity {
     Firebase objetoRef;
     private  ListView lista;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital);
 
+        inicializarComponentes();
         readJson();
+        onClick();
+    }
 
+    private void onClick() {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -44,24 +50,17 @@ public class HospitalActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-
+    private void inicializarComponentes() {
+        lista = (ListView) findViewById(R.id.listviewHospital);
     }
 
 
-
     private  void readJson() {
-
         Firebase.setAndroidContext(this);
         objetoRef = new Firebase("https://cartaovacina-123.firebaseio.com/hospital");
         hospital = new ArrayList<Hospital>();
-
-        lista = (ListView) findViewById(R.id.listviewHospital);
-
-        adapter= new HospitalAdapter(this, hospital);
-
-        lista.setAdapter(adapter);
-
 
         objetoRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,22 +74,17 @@ public class HospitalActivity extends AppCompatActivity {
 
                     Hospital h= new Hospital(bairro,endereco,fone,unidade);
                     hospital.add(h);
-
-
-
                 }
-
-                lista.deferNotifyDataSetChanged();
-
+                setContexto();
+                lista.setAdapter(adapter);
             }
 
             @Override
             public void onCancelled(FirebaseError firebaseError) {
-
             }
         });
-
     }
 
+    private void setContexto(){ adapter= new HospitalAdapter(this, hospital);}
 
 }

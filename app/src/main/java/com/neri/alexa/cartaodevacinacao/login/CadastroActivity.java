@@ -1,4 +1,4 @@
-package com.neri.alexa.cartaodevacinacao;
+package com.neri.alexa.cartaodevacinacao.login;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -14,6 +14,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.neri.alexa.cartaodevacinacao.R;
+import com.neri.alexa.cartaodevacinacao.TelaInicialActivity;
 import com.neri.alexa.cartaodevacinacao.login.ConexaoFirebase;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -45,16 +47,16 @@ public class CadastroActivity extends AppCompatActivity {
     }
 
     private void criarUser(String email, String senha){
+       alert("Aguarde....");
         auth.createUserWithEmailAndPassword(email,senha).
-                addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
+             addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                    public void onComplete( @NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
                             alert("cadastrado com sucesso");
                             Intent i = new Intent(CadastroActivity.this, TelaInicialActivity.class);
                             startActivity(i);
                             finish();
-
                         }else{
                             alert("Erro ao cadastrar");
                         }
@@ -67,7 +69,6 @@ public class CadastroActivity extends AppCompatActivity {
         editSenha = (EditText) findViewById(R.id.editSenhaCadastro);
         btnCadastrar = (Button) findViewById(R.id.buttonCadastrar);
         progressBar = (ProgressBar)findViewById(R.id.progressBarCadastrar);
-
     }
 
     @Override
@@ -78,6 +79,5 @@ public class CadastroActivity extends AppCompatActivity {
 
     private void alert(String msg){
         Toast.makeText(CadastroActivity.this,msg,Toast.LENGTH_SHORT).show();
-
     }
 }

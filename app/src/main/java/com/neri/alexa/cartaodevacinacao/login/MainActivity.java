@@ -14,7 +14,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.neri.alexa.cartaodevacinacao.CadastroActivity;
 import com.neri.alexa.cartaodevacinacao.R;
 import com.neri.alexa.cartaodevacinacao.TelaInicialActivity;
 
@@ -54,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String email = editEmail.getText().toString().trim();
-             //   String senha = editSenha.getText().toString().trim();
-             //   login(email,senha);
-                Intent i = new Intent(MainActivity.this,TelaInicialActivity.class);
-                startActivity(i);
+             //  String email = editEmail.getText().toString().trim();
+             //  String senha = editSenha.getText().toString().trim();
+                String email = "alexandre944@gmail.com";
+                        String senha = "23031992";
+               login(email,senha);
 
             }
         });
@@ -68,21 +67,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private  void login(String email, String senha){
-
-        auth.signInWithEmailAndPassword(email,senha).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+//        alert("AGUARDE....");
+         auth.signInWithEmailAndPassword(email,senha).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
+           public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Intent i = new Intent(MainActivity.this, TelaInicialActivity.class);
                     startActivity(i);
                     finish();
-
-
                 }else{
                     alert("Email ou senha errado");
                 }
-
-
             }
         });
     }
@@ -99,5 +94,4 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         auth = ConexaoFirebase.getFirebaseAuth();
     }
-
 }

@@ -7,17 +7,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.firebase.client.ValueEventListener;
 import com.neri.alexa.cartaodevacinacao.R;
 
 import java.util.ArrayList;
 import modal.Vacina;
+import vacina.VacinasActivity;
 
 
 public class VacinaAdapter extends ArrayAdapter{
-    private Context context = null;
+    private Context context;
     private final ArrayList<Vacina> elementos;
 
-    public VacinaAdapter(Context context, ArrayList<Vacina> elementos) {
+    public VacinaAdapter(VacinasActivity context, ArrayList<Vacina> elementos) {
         super(context, R.layout.vacina, elementos);
         this.context = context;
         this.elementos = elementos;
@@ -25,15 +27,21 @@ public class VacinaAdapter extends ArrayAdapter{
 
     public View getView (int position, View contvertView, ViewGroup parent){
 
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.vacina, parent, false);
+       View view;
+       ViewHolderVacina holder;
 
-        TextView nomeVacina = (TextView) rowView.findViewById(R.id.textViewNomeVacina);
-        TextView idade =  (TextView) rowView.findViewById(R.id.textViewIdadeVacina);
+        if( contvertView == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.vacina, parent, false);
+            holder = new ViewHolderVacina(view);
+            view.setTag(holder);
+        } else {
+            view = contvertView;
+            holder = (ViewHolderVacina) view.getTag();
+        }
 
-        nomeVacina.setText(elementos.get(position).getVacina());
-        idade.setText(elementos.get(position).getIdade());
+        holder.nomeVacina.setText(elementos.get(position).getVacina());
+        holder.dose.setText(elementos.get(position).getDose());
 
-        return  rowView;
+        return view;
     }
 }

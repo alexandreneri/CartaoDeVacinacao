@@ -23,34 +23,23 @@ public class ResetarSenhaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-     //   getActionBar().setTitle(ResetarSenhaActivity.class.getName());
         setContentView(R.layout.activity_resetar_senha);
-      //  getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F51B5")));
-
         inicializaComponentes();
         onClicks();
     }
     private void onClicks(){
-        btnRecuperarSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
         btnRecuperarSenha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email = editEmail.getText().toString().trim();
                 resetSenha(email);
-
             }
         });
-
-
     }
 
     private void resetSenha(String email){
+        alert("Aguarde...");
 
         auth.sendPasswordResetEmail(email).addOnCompleteListener(ResetarSenhaActivity.this, new OnCompleteListener<Void>() {
             @Override
@@ -67,7 +56,6 @@ public class ResetarSenhaActivity extends AppCompatActivity {
 
     private  void alert(String s){
         Toast.makeText(ResetarSenhaActivity.this,s, Toast.LENGTH_SHORT).show();
-
     }
 
     private void inicializaComponentes(){

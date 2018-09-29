@@ -8,12 +8,14 @@ import android.widget.Button;
 import com.neri.alexa.cartaodevacinacao.login.ConexaoFirebase;
 import com.neri.alexa.cartaodevacinacao.login.MainActivity;
 
+import Hospital.HospitalActivity;
+import cartao.CartaoVacinaActivity;
 import imc.ImcActivity;
+import vacina.VacinasActivity;
 
 public class TelaInicialActivity extends AppCompatActivity {
 
     private Button btnSair, btnVacina, btnHospital, btnCartao, btnImc;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,6 @@ public class TelaInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tela_inicial);
         inicializaComponetes();
         onClicks();
-
     }
 
     private void onClicks(){
@@ -59,8 +60,6 @@ public class TelaInicialActivity extends AppCompatActivity {
             }
         });
 
-
-
         btnImc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,17 +67,12 @@ public class TelaInicialActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
-
-
 
     private void inicializaComponetes(){
         btnSair = (Button) findViewById(R.id.buttonSair);
         btnVacina = (Button) findViewById(R.id.buttonVacinas);
         btnHospital = (Button) findViewById(R.id.buttonHospital);
-
         btnCartao = (Button) findViewById(R.id.buttonCartaoVacina);
         btnImc = (Button) findViewById(R.id.buttonImc);
 

@@ -15,21 +15,24 @@
         <activity android:name=".login.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastroActivity" />
+        <activity android:name=".login.CadastroActivity" />
         <activity android:name=".login.ResetarSenhaActivity" />
         <activity android:name=".TelaInicialActivity" />
-        <activity android:name=".VacinasActivity" />
-        <activity android:name=".HospitalActivity" />
+        <activity android:name="vacina.VacinasActivity" />
+        <activity android:name="Hospital.HospitalActivity" />
         <activity android:name="imc.ImcActivity" />
-        <activity android:name=".CartaoVacinaActivity" />
-        <activity android:name=".Descricao_Vacina_Activity" />
-        <activity android:name=".DescicaoHospitalActivity" />
-        <activity android:name=".login.CadastraUsuarioActivity" />
-        <activity android:name=".CartaoVacinaVacina"></activity>
+        <activity android:name="cartao.CartaoVacinaActivity" />
+        <activity android:name="vacina.Descricao_Vacina_Activity" />
+        <activity android:name="Hospital.DescicaoHospitalActivity" />
+        <activity android:name="cartao.CadastraUsuarioActivity" />
+        <activity android:name="cartao.CartaoVacinaVacina" />
+        <activity android:name=".CartaVacinaTomadasActivity" />
+        <activity android:name="cartao.AlterarUsuarioActivity" />
+        <activity android:name=".AlterarVacinaActivity" />
+        <activity android:name=".AdicionarVacinaActivity"></activity>
     </application>
 
 </manifest>
