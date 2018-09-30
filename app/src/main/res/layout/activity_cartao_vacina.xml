@@ -4,31 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cartao.CartaoVacinaActivity">
-
-    <ListView
-        android:id="@+id/listviewUsuario"
-        android:layout_width="382dp"
-        android:layout_height="395dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context="cartao.CartaoVacinaActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/buttonNovoPerfil"
+        android:id="@+id/buttonNovoVacinasTomadas"
         android:layout_width="142dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Novo Perfil"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="11dp"
+        android:background="@android:color/holo_purple"
+        android:contentDescription="@string/addVacina"
+        android:text="@string/addVacina"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listviewUsuario"
-        app:layout_constraintVertical_bias="0.392" />
+        app:layout_constraintTop_toBottomOf="@+id/listviewVacinasTomadas" />
+
+    <ListView
+        android:id="@+id/listviewVacinasTomadas"
+        android:layout_width="382dp"
+        android:layout_height="328dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewVacinasTomadasCartao" />
+
+    <TextView
+        android:id="@+id/textViewVacinasTomadasCartao"
+        android:layout_width="301dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/vacinatomadas"
+        android:text="@string/vacinatomadas"
+        android:textAlignment="viewStart"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

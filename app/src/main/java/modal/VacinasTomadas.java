@@ -3,60 +3,40 @@ package modal;
 public class VacinasTomadas {
 
     private  String nome;
-    private  String sexo;
+    private  String dose;
     private  String data;
-    private  String uidVacina;
-    private  String uidUsuario;
+    private  String uid;
 
-    public VacinasTomadas(String uidVacina, String uidUsuario) {
-        this.uidVacina = uidVacina;
-        this.uidUsuario = uidUsuario;
-    }
-
-    public String getUidVacina() {
-        return uidVacina;
-    }
-
-    public void setUidVacina(String uidVacina) {
-        this.uidVacina = uidVacina;
-    }
-
-    public String getUidUsuario() {
-        return uidUsuario;
-    }
-
-    public void setUidUsuario(String uidUsuario) {
-        this.uidUsuario = uidUsuario;
-    }
-
-    public VacinasTomadas(String nome, String sexo, String data){
+    public VacinasTomadas(String nome, String dose, String data, String uid){
         this.nome = nome;
-        this.sexo = sexo;
+        this.dose = dose;
         this.data = data;
+        this.uid = uid;
 
     }
 
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
     public String getData() {
         return data;
-    }
-
-    public void setData(String id) {
+    }    public void setData(String id) {
         this.data = data;
     }
-
     public String getNome() {
         return nome;
     }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getSexo() {
-        return sexo;
+    public String getDose() {
+        return dose;
     }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setSexo(String dose) {
+        this.dose = dose;
     }
 }

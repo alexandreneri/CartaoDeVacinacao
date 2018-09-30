@@ -14,13 +14,13 @@ import java.util.ArrayList;
 
 import modal.VacinasTomadas;
 
-public class UsuarioAdapter extends ArrayAdapter{
+public class VacinasTomadasAdapter extends ArrayAdapter{
 
     private Context context = null;
     private final ArrayList<VacinasTomadas> elementos;
 
-    public UsuarioAdapter(Context context, ArrayList<VacinasTomadas> elementos) {
-        super(context, R.layout.usuario, elementos);
+    public VacinasTomadasAdapter(Context context, ArrayList<VacinasTomadas> elementos) {
+        super(context, R.layout.vacinatomadas, elementos);
         this.context = context;
         this.elementos = elementos;
     }
@@ -28,10 +28,9 @@ public class UsuarioAdapter extends ArrayAdapter{
     public View getView (int position, View contvertView, ViewGroup parent){
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.usuario, parent, false);
+        View rowView = inflater.inflate(R.layout.vacinatomadas, parent, false);
 
-        TextView nomeUsuario = (TextView) rowView.findViewById(R.id.textViewUsuario);
-
+        TextView nomeUsuario = (TextView) rowView.findViewById(R.id.textViewVacinasVacinasTomadas);
         nomeUsuario.setText(elementos.get(position).getNome());
 
         return  rowView;

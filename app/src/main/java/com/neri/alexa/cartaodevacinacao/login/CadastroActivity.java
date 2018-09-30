@@ -23,14 +23,13 @@ public class CadastroActivity extends AppCompatActivity {
     private EditText editEmail, editSenha;
     private Button btnCadastrar;
     private FirebaseAuth auth;
-    private ProgressBar progressBar;
-    private Boolean nbAtivo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-        inicializaComponentes();
+              inicializaComponentes();
         onClicks();
     }
 
@@ -42,33 +41,36 @@ public class CadastroActivity extends AppCompatActivity {
                 String email = editEmail.getText().toString().trim();
                 String senha = editSenha.getText().toString().trim();
                 criarUser(email,senha);
+
+
             }
         });
     }
 
     private void criarUser(String email, String senha){
-       alert("Aguarde....");
-        auth.createUserWithEmailAndPassword(email,senha).
-             addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
+
+        
+        auth.createUserWithEmailAndPassword(email,senha)
+                .addOnCompleteListener(CadastroActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onComplete( @NonNull Task<AuthResult> task) {
+                   public void onComplete( @NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            alert("cadastrado com sucesso");
-                            Intent i = new Intent(CadastroActivity.this, TelaInicialActivity.class);
+                           alert("cadastrado com sucesso");
+                           Intent i = new Intent(CadastroActivity.this, TelaInicialActivity.class);
                             startActivity(i);
                             finish();
-                        }else{
+                       }else{
                             alert("Erro ao cadastrar");
                         }
-                    }
-                });
+                   }
+               });
     }
 
     private void inicializaComponentes(){
         editEmail = (EditText) findViewById(R.id.editEmailCadastro);
         editSenha = (EditText) findViewById(R.id.editSenhaCadastro);
         btnCadastrar = (Button) findViewById(R.id.buttonCadastrar);
-        progressBar = (ProgressBar)findViewById(R.id.progressBarCadastrar);
+
     }
 
     @Override

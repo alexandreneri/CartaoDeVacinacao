@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">CartaoDeVacinacao</string>
+    <string name="cartao_Vacina">Cartao Vacina</string>
+    <string name="vacina">Vacina</string>
+    <string name="hospital">Hospital</string>
+    <string name="imc">Imc</string>
+    <string name="sair">Sair</string>
+    <string name="recuperar">Recuperar</string>
+    <string name="login">login</string>
+    <string name="esqueci_minha_senha">Esqueci minha Senha</string>
+    <string name="ainda_nao_tem_cadastro">Ainda não tem Cadastro? Cadastre-se</string>
+    <string name="imc_tracional">Imc Tradicional</string>
+    <string name="imc_novo">Imc Novo</string>
+    <string name="Altura">Altura</string>
+    <string name="Peso">Peso</string>
+    <string name="Resultado">Resultado</string>
+    <string name="vacinatomadas">Vacinas Tomadas</string>
+    <string name="addVacina">Add Vacina</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="alterar">Aterar</string>
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
+    <string name="descricaoVacina">Descição Vacina Tomada</string>
 </resources>

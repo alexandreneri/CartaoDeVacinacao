@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlterarUsuarioActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <EditText
+        android:id="@+id/editTextAlterarNomeVacina"
+        android:layout_width="286dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="19dp"
+        android:ems="10"
+        android:hint="Nome Vacina"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAlterarDose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/editTextAlterarDose"
+        android:layout_width="289dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="7dp"
+        android:ems="10"
+        android:hint="Dose"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAlterarData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarNomeVacina" />
+
+    <Button
+        android:id="@+id/buttonAlterarVacina"
+        android:layout_width="121dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/textColorLinkInverse"
+        android:contentDescription="@string/alterar"
+        android:text="@string/alterar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonExcluir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarData" />
+
+    <Button
+        android:id="@+id/buttonExcluir"
+        android:layout_width="124dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/holo_red_light"
+        android:contentDescription="@string/excluir"
+        android:text="@string/excluir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonAlterarVacina"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarData"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextAlterarData"
+        android:layout_width="289dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Data Vacinação"
+        android:inputType="date"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAlterarVacina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAlterarDose" />
+
+    <TextView
+        android:id="@+id/textViewAlterarNome"
+        android:layout_width="248dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAlterarDose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textViewAlterarData"
+        android:layout_width="247dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlterarNome" />
+
+    <TextView
+        android:id="@+id/textViewAlterarDose"
+        android:layout_width="249dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAlterarDose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlterarNome" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="290dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Descrição Vacina Tomada"
+        android:text="Descrição Vacina Tomada"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAlterarNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="179dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/alterar"
+        android:text="@string/alterar"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAlterarNomeVacina"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAlterarDose" />
+</android.support.constraint.ConstraintLayout>

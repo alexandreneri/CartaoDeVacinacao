@@ -4,65 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="imc.ImcActivity">
+    tools:context="imc.ImcActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <EditText
         android:id="@+id/editTextAltura"
-        android:layout_width="0dp"
-        android:layout_height="71dp"
-        android:layout_marginBottom="38dp"
+        android:layout_width="301dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="22dp"
         android:layout_marginEnd="41dp"
         android:layout_marginStart="41dp"
-        android:layout_marginTop="48dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        app:layout_constraintBottom_toTopOf="@+id/editTextPeso"
+        app:layout_constraintBottom_toTopOf="@+id/textViewPeso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Altura" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewAltura" />
 
     <EditText
         android:id="@+id/editTextPeso"
         android:layout_width="0dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="163dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="159dp"
         android:ems="10"
         android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNovoImc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Peso" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewResultado"
-        android:layout_width="174dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="78dp"
-        android:text="TextView"
+        android:layout_width="172dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="101dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/buttonTradicionalImc"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginBottom="43dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/colorAccent"
         android:text="Imc Tradicional"
-        app:layout_constraintStart_toStartOf="@+id/editTextPeso"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNovoImc"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPeso" />
 
     <Button
         android:id="@+id/buttonNovoImc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="33dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="232dp"
+        android:layout_marginEnd="42dp"
+        android:background="@android:color/holo_green_dark"
         android:text="Imc Novo"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPeso"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonTradicionalImc"
         app:layout_constraintTop_toBottomOf="@+id/editTextPeso" />
+
+    <TextView
+        android:id="@+id/textViewAltura"
+        android:layout_width="165dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/Altura"
+        android:text="@string/Altura"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAltura"
+        app:layout_constraintStart_toStartOf="@+id/editTextAltura"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewPeso"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginStart="3dp"
+        android:contentDescription="@string/Peso"
+        android:text="@string/Peso"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPeso"
+        app:layout_constraintStart_toStartOf="@+id/editTextPeso"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAltura" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="91dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="14dp"
+        android:contentDescription="@string/Resultado"
+        android:text="@string/Resultado"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewResultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTradicionalImc" />
 </android.support.constraint.ConstraintLayout>

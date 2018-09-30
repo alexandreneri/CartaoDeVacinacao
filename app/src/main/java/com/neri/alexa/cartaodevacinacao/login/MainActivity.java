@@ -53,10 +53,8 @@ public class MainActivity extends AppCompatActivity {
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //  String email = editEmail.getText().toString().trim();
-             //  String senha = editSenha.getText().toString().trim();
-                String email = "alexandre944@gmail.com";
-                        String senha = "23031992";
+               String email = editEmail.getText().toString().trim();
+               String senha = editSenha.getText().toString().trim();
                login(email,senha);
 
             }
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private  void login(String email, String senha){
-//        alert("AGUARDE....");
+         alert("AGUARDE....");
          auth.signInWithEmailAndPassword(email,senha).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
            public void onComplete(@NonNull Task<AuthResult> task) {
